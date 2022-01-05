@@ -1,20 +1,20 @@
 version: 0.2
 
 phases:
-	install:
-		runtime-versions:
-			python: 3.x
-	pre_build:
-		commands:
-			- echo Nothing to do in the pre_build phase...
-	build:
-		commands:
-			- ehco Build started on `date`
-			- python main.py
-	post_build:
-		commands:
-			- ehco Build completed on `date
+  install:
+    runtime-versions:
+      python: 3.x
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+    - ehco Build started on `date`
+      - python main.py
+  post_build:
+    commands:
+      - ehco Build completed on `date
 artifacts:
-	files:
-		- '**/*'
-	name: artifact-$(date +%Y-%m-%d)
+  files:
+    - '**/*'
+  name: artifact-$(date +%Y-%m-%d)
