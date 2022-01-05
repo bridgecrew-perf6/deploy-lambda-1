@@ -9,11 +9,11 @@ phases:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      - ehco Build started on `date`
+      - ehco Build started
       - python main.py
   post_build:
     commands:
-      - ehco Build completed on `date`
+      - ehco Build completed
 artifacts:
   files:
     - '**/*'
