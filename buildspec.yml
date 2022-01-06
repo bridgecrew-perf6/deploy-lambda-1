@@ -17,5 +17,5 @@ phases:
       - bash scripts/deploy.sh
 artifacts:
   files:
-    - 'src/*'
+    - 'dist/*'
   name: artifact-$(date +%Y-%m-%d)
