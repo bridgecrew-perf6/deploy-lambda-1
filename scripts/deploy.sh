@@ -1,2 +1,2 @@
 #!/bin/bash
-aws lambda list-functions
+aws --version
