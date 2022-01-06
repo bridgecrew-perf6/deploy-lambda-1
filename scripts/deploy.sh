@@ -10,7 +10,7 @@ aws lambda get-alias --function-name $DEPLOY_LAMBDA_NAME --name $DEPLOY_LAMBDA_A
 CURRENT_LAMBDA_ALIAS_VERSION = $(cat lambda-alias.json | jq -r '.FunctionVersion')
 
 # Compress source code
-zip -r ../dist/source.zip ../src/*
+zip -r ../dist/source.zip -i ../src/*
 
 # Upload source for lambda function
 aws lambda update-function-code --function-name $DEPLOY_LAMBDA_NAME --zip-file fileb://dist/source.zip --publish > update-lambda.json
