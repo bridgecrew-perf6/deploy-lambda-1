@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Install jq
-sudo curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o /usr/local/bin/jq
-sudo chmod a+x /usr/local/bin/jq
+curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o /usr/local/bin/jq
+chmod a+x /usr/local/bin/jq
 
 # Extract the lambda alias version
 aws lambda get-alias --function-name $DEPLOY_LAMBDA_NAME --name $DEPLOY_LAMBDA_ALIAS > lambda-alias.json
@@ -10,7 +10,7 @@ aws lambda get-alias --function-name $DEPLOY_LAMBDA_NAME --name $DEPLOY_LAMBDA_A
 CURRENT_LAMBDA_ALIAS_VERSION=$(cat lambda-alias.json | jq -r '.FunctionVersion')
 
 # Compress source code
-mkdir ./dist
+mkdir ../dist
 zip -r ../dist/source.zip -i ../src/*
 
 # Upload source for lambda function
