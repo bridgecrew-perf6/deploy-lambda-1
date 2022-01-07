@@ -13,12 +13,12 @@ CURRENT_LAMBDA_ALIAS_VERSION=$(cat lambda-alias.json | jq -r '.FunctionVersion')
 mkdir dist
 # Move the directory for source code
 cd src
-ls
+pwd
 # Compress the source code
 zip -r -u ../dist/source.zip *
 # Move the upper directory
 cd ..
-
+ls dist
 # Upload source for lambda function
 aws lambda update-function-code --function-name $DEPLOY_LAMBDA_NAME --zip-file fileb://dist/source.zip --publish > update-lambda.json
 
