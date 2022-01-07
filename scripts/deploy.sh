@@ -12,11 +12,11 @@ CURRENT_LAMBDA_ALIAS_VERSION=$(cat lambda-alias.json | jq -r '.FunctionVersion')
 pwd
 
 # Compress source code
-mkdir ../dist
-zip -r -u ../dist/source.zip ../src/*
+mkdir dist
+zip -r -u dist/source.zip src/*
 
 # Upload source for lambda function
-aws lambda update-function-code --function-name $DEPLOY_LAMBDA_NAME --zip-file fileb://../dist/source.zip --publish > update-lambda.json
+aws lambda update-function-code --function-name $DEPLOY_LAMBDA_NAME --zip-file fileb://dist/source.zip --publish > update-lambda.json
 
 # Extract last version for lambda function
 LATEST_VERSION=$(cat update-lambda.json | jq -r '.Version')
