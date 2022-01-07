@@ -38,6 +38,6 @@ Resources:
         CurrentVersion: "$CURRENT_LAMBDA_ALIAS_VERSION"
         TargetVersion: "$LATEST_VERSION"
 EOM
-
+aws s3 ls s3://$S3_BUCKET/
 # Upload appspec file in s3 bucket
 aws s3 cp ./appspec.yml s3://$S3_BUCKET/codeDeploy/
