@@ -39,6 +39,5 @@ Resources:
         TargetVersion: "$LATEST_VERSION"
 EOM
 
-ls
 # Upload appspec file in s3 bucket
-aws s3 cp appspec.yml s3://$S3_BUCKET/codeDeploy/
+aws s3 cp ./appspec.yml s3://$S3_BUCKET/codeDeploy/
