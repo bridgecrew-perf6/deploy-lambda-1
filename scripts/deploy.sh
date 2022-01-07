@@ -9,11 +9,9 @@ aws lambda get-alias --function-name $DEPLOY_LAMBDA_NAME --name $DEPLOY_LAMBDA_A
 # Extract the current version for this lambda alias
 CURRENT_LAMBDA_ALIAS_VERSION=$(cat lambda-alias.json | jq -r '.FunctionVersion')
 
-pwd
-ls
-
 # Create the directory for output
 mkdir dist
+ls
 # Move the directory for source code
 cd src
 # Compress the source code
