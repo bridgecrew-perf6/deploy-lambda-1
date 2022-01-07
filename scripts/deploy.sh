@@ -11,9 +11,9 @@ CURRENT_LAMBDA_ALIAS_VERSION=$(cat lambda-alias.json | jq -r '.FunctionVersion')
 
 # Create the directory for output
 mkdir dist
-ls
 # Move the directory for source code
 cd src
+ls
 # Compress the source code
 zip -r -u ../dist/source.zip *
 # Move the upper directory
