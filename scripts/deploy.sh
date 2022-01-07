@@ -15,7 +15,7 @@ ls
 # Move the directory for source code
 cd src
 # Compress the source code
-zip -r -u dist/source.zip *
+zip -r -u ../dist/source.zip *
 # Move the upper directory
 cd ..
 
