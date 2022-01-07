@@ -14,7 +14,7 @@ mkdir ../dist
 zip -r ../dist/source.zip -i ../src/*
 
 # Upload source for lambda function
-aws lambda update-function-code --function-name $DEPLOY_LAMBDA_NAME --zip-file fileb://dist/source.zip --publish > update-lambda.json
+aws lambda update-function-code --function-name $DEPLOY_LAMBDA_NAME --zip-file fileb://../dist/source.zip --publish > update-lambda.json
 
 # Extract last version for lambda function
 LATEST_VERSION=$(cat update-lambda.json | jq -r '.Version')
