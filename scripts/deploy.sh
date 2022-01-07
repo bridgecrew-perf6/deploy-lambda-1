@@ -14,7 +14,7 @@ mkdir dist
 # Move the directory for source code
 cd src
 # Compress the source code
-zip -r -u -q ../dist/source.zip *
+zip -r -q ../dist/source.zip *
 # Move the upper directory
 cd ..
 # Upload source for lambda function
@@ -27,7 +27,7 @@ if [[ $CURRENT_LAMBDA_ALIAS_VERSION -ge $LATEST_VERSION ]]; then
 fi
 
 # Create appspec file in s3 bucket to create a deployment for AWS CodeDeploy
-cat > appspec.yml <<- EOM
+cat > appspec.yaml <<- EOM
 version: 0.0
 Resources:
   - deployLambda:
@@ -40,4 +40,4 @@ Resources:
 EOM
 
 # Upload appspec file in s3 bucket
-aws s3 cp ./appspec.yml s3://$S3_BUCKET/codeDeploy/
+aws s3 cp ./appspec.yaml s3://$S3_BUCKET/codeDeploy/

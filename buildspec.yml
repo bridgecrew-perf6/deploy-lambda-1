@@ -18,4 +18,4 @@ phases:
 artifacts:
   files:
     - 'dist/*'
-  name: artifact-$(date +%Y-%m-%d)
+  name: codeBuild/artifact-$(date +%Y-%m-%dT%H:%M:%S)
