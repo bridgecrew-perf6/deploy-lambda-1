@@ -1,8 +1,6 @@
 import json
 
 def lambda_handler(event, context):
-  print('Process start')
-  # TODO implement
   if 'status' in event.keys():
     if event['status'] == 'test':
       return {
