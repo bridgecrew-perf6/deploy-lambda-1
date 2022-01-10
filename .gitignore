@@ -1,0 +1,5 @@
+src/testCodeDeployLambda/__pycache__/
+src/testCodeDeployLambda/*.py[cod]
+test/testCodeDeployLambda/__pycache__/
+test/testCodeDeployLambda/*.py[cod]
+test/testCodeDeployLambda/.pytest*
