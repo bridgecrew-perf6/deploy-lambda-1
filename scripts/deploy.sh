@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check build result
-if [[$CODEBUILD_BUILD_SUCCEEDING -eq 0]]; then
+if [[ $CODEBUILD_BUILD_SUCCEEDING -eq 0 ]]; then
   echo "ERROR BUILD FAILED" && exit 1;
 fi
 
