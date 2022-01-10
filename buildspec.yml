@@ -7,10 +7,11 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
+      - pip install -U pytest
   build:
     commands:
       - echo Build started on `date`
-      - python src/main.py
+      - pytest test/"$DEPLOY_LAMBDA_NAME"/test.py
   post_build:
     commands:
       - echo Build completed on `date`

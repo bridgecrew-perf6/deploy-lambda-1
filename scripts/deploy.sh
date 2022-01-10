@@ -12,11 +12,11 @@ CURRENT_LAMBDA_ALIAS_VERSION=$(cat lambda-alias.json | jq -r '.FunctionVersion')
 # Create the directory for output
 mkdir dist
 # Move the directory for source code
-cd src
+cd src/$DEPLOY_LAMBDA_NAME/
 # Compress the source code
-zip -r -q ../dist/source.zip *
+zip -r -q ../../dist/source.zip *
 # Move the upper directory
-cd ..
+cd ../..
 # Upload source for lambda function
 aws lambda update-function-code --function-name $DEPLOY_LAMBDA_NAME --zip-file fileb://dist/source.zip --publish > update-lambda.json
 
@@ -40,4 +40,4 @@ Resources:
 EOM
 
 # Upload appspec file in s3 bucket
-aws s3 cp ./appspec.yaml s3://$S3_BUCKET/codeDeploy/
+aws s3 cp ./appspec.yaml s3://$S3_BUCKET/codeDeploy/$DEPLOY_LAMBDA_NAME/
