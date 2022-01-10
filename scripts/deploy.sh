@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Remove cache file using pytest
+rm -r src/$DEPLOY_LAMBDA_NAME/__pycache__
 # Check build result
 if [[ $CODEBUILD_BUILD_SUCCEEDING -eq 0 ]]; then
   echo "ERROR BUILD FAILED" && exit 1;

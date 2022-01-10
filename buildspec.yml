@@ -16,7 +16,6 @@ phases:
     commands:
       - echo Build completed on `date`
       - bash scripts/deploy.sh 
-      - rm -r src/"$DEPLOY_LAMBDA_NAME"/__pycache__
 artifacts:
   files:
     - 'dist/*'
