@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Check build result
+if [[$CODEBUILD_BUILD_SUCCEEDING -eq 0]]; then
+  echo "ERROR BUILD FAILED" && exit 1;
+fi
+
 # Install jq
 curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o /usr/local/bin/jq
 chmod a+x /usr/local/bin/jq

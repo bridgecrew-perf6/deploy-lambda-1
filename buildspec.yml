@@ -12,10 +12,10 @@ phases:
     commands:
       - echo Build started on `date`
       - pytest test/"$DEPLOY_LAMBDA_NAME"/test.py
-reports:
-  "$DEPLOY_LAMBDA_NAME"
-    files:
-      - "**/*"
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - bash scripts/deploy.sh 
 artifacts:
   files:
     - 'dist/*'
