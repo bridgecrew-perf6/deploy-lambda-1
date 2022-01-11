@@ -38,7 +38,7 @@ cat > appspec.yaml <<- EOM
 version: 0.0
 Resources:
   - deployLambda:
-      Type: AWS::LAMBDA::FUNCTION
+      Type: AWS::Lambda::Function
       Properties:
         Name: "$DEPLOY_LAMBDA_NAME"
         Alias: "$DEPLOY_LAMBDA_ALIAS"
