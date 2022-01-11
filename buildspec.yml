@@ -19,4 +19,4 @@ phases:
 artifacts:
   files:
     - 'dist/*'
-  name: codeBuild/artifact-$(date +%Y-%m-%dT%H:%M:%S)
+  name: codeDeploy/"$DEPLOY_LAMBDA_NAME"/source.zip
